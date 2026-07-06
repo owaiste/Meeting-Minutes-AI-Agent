@@ -17,6 +17,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of your application code
 COPY . .
 
+# ... (your previous pip install and copy steps remain the same)
+
 EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "streamlit run app.py --server.port=${PORT} --server.address=0.0.0.0"]
+# Define Streamlit environment variables natively
+ENV STREAMLIT_SERVER_PORT=8080
+ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
+
+# Keep the entrypoint completely clean and static
+ENTRYPOINT ["streamlit", "run", "app.py"]
