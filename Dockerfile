@@ -17,8 +17,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of your application code
 COPY . .
 
-# ... (your previous pip install and copy steps remain the same)
-
 EXPOSE 8080
 
 # Define Streamlit environment variables natively
