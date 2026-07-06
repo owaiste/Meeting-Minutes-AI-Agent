@@ -24,4 +24,4 @@ ENV STREAMLIT_SERVER_PORT=8080
 ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
 
 # Keep the entrypoint completely clean and static
-ENTRYPOINT ["streamlit", "run", "app.py"]
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8080", "--server.address=0.0.0.0", "--server.headless=true", "--browser.gatherUsageStats=false"]
